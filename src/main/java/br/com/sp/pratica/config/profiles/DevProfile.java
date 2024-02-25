@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Scope;
 
 import br.com.sp.pratica.domain.User;
 import br.com.sp.pratica.enums.Genre;
+import br.com.sp.pratica.enums.UserRole;
 import br.com.sp.pratica.repositories.UserRepository;
 
 @Configuration
@@ -30,8 +31,8 @@ public class DevProfile {
 	@Bean
 	public void insertDB() {
 		logger.debug("Iniciando Insert no banco de dados H2");
-		User user1 = new User("Andrew Matos", 20, Genre.MASCULINO, new Date(), new Date(), "andrewteste@fake.com", "123");
-		User user2 = new User("José Felipe", 35, Genre.MASCULINO, new Date(), new Date(), "josefelipe@fake.com", "123");
+		User user1 = new User("Andrew Matos", 20, Genre.MASCULINO, new Date(), new Date(), "andrewteste@fake.com", "123", true, UserRole.ADMIN);
+		User user2 = new User("José Felipe", 35, Genre.MASCULINO, new Date(), new Date(), "josefelipe@fake.com", "123", true, UserRole.ADMIN);
 		
 		userRepository.saveAll(Arrays.asList(user1, user2));
 		logger.debug("Finalizando Insert no banco de dados H2");

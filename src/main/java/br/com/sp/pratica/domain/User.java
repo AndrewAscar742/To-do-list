@@ -1,5 +1,7 @@
 package br.com.sp.pratica.domain;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -12,12 +14,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import br.com.sp.pratica.enums.Genre;
+import br.com.sp.pratica.enums.UserRole;
 
 @Entity
 @Table(name = "users")
-
-public class User {
+public class User implements UserDetails{
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,16 +36,18 @@ public class User {
 	private Date data_edition;
 	private String email;
 	private String password;
+	private Boolean enabled;
+	private UserRole role;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-	private List<ToDoList> toDoList;
+	private List<ToDoList> toDoList = new ArrayList<ToDoList>();
 	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public User(String name, Integer age, Genre genre, Date date_initial, Date data_edition, String email,
-			String password) {
+			String password, Boolean enabled, UserRole role) {
 		super();
 		this.name = name;
 		this.age = age;
@@ -47,6 +56,8 @@ public class User {
 		this.data_edition = data_edition;
 		this.email = email;
 		this.password = password;
+		this.enabled = enabled;
+		this.role = role;
 	}
 
 	public Long getId() {
@@ -121,6 +132,22 @@ public class User {
 		this.toDoList = toDoList;
 	}
 
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public UserRole getRole() {
+		return role;
+	}
+
+	public void setRole(UserRole role) {
+		this.role = role;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -141,6 +168,42 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + "]";
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		if (this.role == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+		else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return enabled;
 	}
 	
 }
