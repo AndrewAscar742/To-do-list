@@ -3,6 +3,8 @@ package br.com.sp.pratica.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import br.com.sp.pratica.dtos.ToDoListDTO;
 import br.com.sp.pratica.dtos.postDtos.PostToDoList;
 import br.com.sp.pratica.dtos.putDtos.PutToDoList;
+import br.com.sp.pratica.dtos.putDtos.StatusToDoListDTO;
 import br.com.sp.pratica.services.ToDoListService;
 
 @RestController
@@ -51,7 +54,7 @@ public class ToDoListController {
 	}
 	
 	@PostMapping("/save")
-	public ResponseEntity<ToDoListDTO> save(@RequestBody PostToDoList toDoList, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<ToDoListDTO> save(@RequestBody @Valid PostToDoList toDoList, UriComponentsBuilder uriBuilder) {
 		logger.debug("Inicialização do save ToDoList");
 		ToDoListDTO toDoListDto = toDoListService.save(toDoList);
 		
@@ -62,11 +65,20 @@ public class ToDoListController {
 	}
 	
 	@PutMapping("/update" + ID)
-	public ResponseEntity<ToDoListDTO> update(@PathVariable(ID_PARAM) Long id, @RequestBody PutToDoList putToDoList) {
+	public ResponseEntity<ToDoListDTO> update(@PathVariable(ID_PARAM) Long id, @RequestBody @Valid PutToDoList putToDoList) {
 		logger.debug("Inicialização do update ToDoList");
 		ToDoListDTO toDoListDto = toDoListService.update(id, putToDoList);
 		
 		logger.debug("Finalização do update ToDoList");
+		return ResponseEntity.ok(toDoListDto);
+	}
+	
+	@PutMapping("/update" + ID + "/status")
+	public ResponseEntity<ToDoListDTO> updateStatus(@PathVariable(ID_PARAM) Long id, @RequestBody @Valid StatusToDoListDTO status){
+		logger.debug("Inicialização do updateStatus ToDoList");
+		ToDoListDTO toDoListDto = toDoListService.updateStatus(id, status);
+		
+		logger.debug("Finalização do updateStatus ToDoList");
 		return ResponseEntity.ok(toDoListDto);
 	}
 	

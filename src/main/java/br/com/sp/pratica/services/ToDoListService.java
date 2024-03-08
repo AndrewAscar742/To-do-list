@@ -5,6 +5,7 @@ import java.util.List;
 import br.com.sp.pratica.dtos.ToDoListDTO;
 import br.com.sp.pratica.dtos.postDtos.PostToDoList;
 import br.com.sp.pratica.dtos.putDtos.PutToDoList;
+import br.com.sp.pratica.dtos.putDtos.StatusToDoListDTO;
 
 public interface ToDoListService {
 
@@ -17,5 +18,7 @@ public interface ToDoListService {
 	ToDoListDTO findById(Long id);
 
 	ToDoListDTO update(Long id, PutToDoList putToDoList);
+
+	ToDoListDTO updateStatus(Long id, StatusToDoListDTO status);
 
 }

@@ -12,6 +12,7 @@ import br.com.sp.pratica.domain.User;
 import br.com.sp.pratica.dtos.ToDoListDTO;
 import br.com.sp.pratica.dtos.postDtos.PostToDoList;
 import br.com.sp.pratica.dtos.putDtos.PutToDoList;
+import br.com.sp.pratica.dtos.putDtos.StatusToDoListDTO;
 import br.com.sp.pratica.dtos.services.ModelMapperService;
 import br.com.sp.pratica.repositories.ToDoListRepository;
 import br.com.sp.pratica.services.ToDoListService;
@@ -83,6 +84,18 @@ public class ToDoListServiceImpl implements ToDoListService{
 		
 		ToDoListDTO toDoListDTO = modelMapperService.convertToDoListToDTO(toDoList);
 		return toDoListDTO;
+	}
+	
+	@Override
+	public ToDoListDTO updateStatus(Long id, StatusToDoListDTO status) {
+		ToDoList toDoList = toDoListRepository
+				.findById(id)
+				.orElseThrow(() -> new ToDoListNotFoundException(TO_DO_LIST_NOT_FOUND_EXCEPTION));
+		
+		toDoList.setStatus(status.status());
+		toDoList = toDoListRepository.saveAndFlush(toDoList);
+		
+		return modelMapperService.convertToDoListToDTO(toDoList);
 	}
 	
 	private void merge(ToDoList existentDomain, ToDoList updateDomain) {

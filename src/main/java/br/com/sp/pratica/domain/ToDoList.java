@@ -42,6 +42,17 @@ public class ToDoList {
 		this.status = TaskStatus.EM_ANDAMENTO;
 	}
 
+	public ToDoList(String title, String description, Date due_date, Date date_initial, TaskStatus status,
+			User user) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.due_date = due_date;
+		this.date_initial = date_initial;
+		this.status = status;
+		this.user = user;
+	}
+
 	public Long getId() {
 		return id;
 	}

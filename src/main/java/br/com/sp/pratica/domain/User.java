@@ -37,13 +37,13 @@ public class User implements UserDetails{
 	private String email;
 	private String password;
 	private Boolean enabled;
-	private UserRole role;
+	private UserRole userRole;
 	
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
 	private List<ToDoList> toDoList = new ArrayList<ToDoList>();
 	
 	public User() {
-		// TODO Auto-generated constructor stub
+		this.userRole = UserRole.USER;
 	}
 
 	public User(String name, Integer age, Genre genre, Date date_initial, Date data_edition, String email,
@@ -57,9 +57,9 @@ public class User implements UserDetails{
 		this.email = email;
 		this.password = password;
 		this.enabled = enabled;
-		this.role = role;
+		this.userRole = role;
 	}
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -141,11 +141,11 @@ public class User implements UserDetails{
 	}
 
 	public UserRole getRole() {
-		return role;
+		return userRole;
 	}
 
 	public void setRole(UserRole role) {
-		this.role = role;
+		this.userRole = role;
 	}
 
 	@Override
@@ -172,7 +172,7 @@ public class User implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		if (this.role == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+		if (this.userRole == UserRole.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
 		else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
 	}
 

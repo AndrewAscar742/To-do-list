@@ -1,45 +1,467 @@
-21/02/2024 00:24:24  INFO 9824 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 9824 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
-21/02/2024 00:24:24 DEBUG 9824 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
-21/02/2024 00:24:24  INFO 9824 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
-21/02/2024 00:24:24  INFO 9824 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\andre\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/andre/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
-21/02/2024 00:24:24  INFO 9824 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-21/02/2024 00:24:24  INFO 9824 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-21/02/2024 00:24:25  INFO 9824 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-21/02/2024 00:24:25  INFO 9824 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1312 ms
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
-21/02/2024 00:24:26 DEBUG 9824 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
-21/02/2024 00:24:26 DEBUG 9824 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-21/02/2024 00:24:26  INFO 9824 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-21/02/2024 00:24:27  INFO 9824 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-21/02/2024 00:24:27  INFO 9824 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-21/02/2024 00:24:27  INFO 9824 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2358283a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a54be02, org.springframework.security.web.context.SecurityContextPersistenceFilter@5449854c, org.springframework.security.web.header.HeaderWriterFilter@18498cc9, org.springframework.security.web.authentication.logout.LogoutFilter@7dd92000, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b7e5e9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38a0ac3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@74cd9fe3, org.springframework.security.web.session.SessionManagementFilter@7213097, org.springframework.security.web.access.ExceptionTranslationFilter@3805f116]
-21/02/2024 00:24:27 DEBUG 9824 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
-21/02/2024 00:24:27 DEBUG 9824 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
-21/02/2024 00:24:27  WARN 9824 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-21/02/2024 00:24:28  INFO 9824 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-21/02/2024 00:24:28  INFO 9824 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
-21/02/2024 00:24:28  INFO 9824 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 3.928 seconds (JVM running for 4.405)
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51  INFO 9824 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users --- Nova Requisição: http://localhost:8081/api/users
-21/02/2024 00:24:51 DEBUG 9824 --- [http-nio-8081-exec-1] b.c.s.pratica.controller.UserController  : Listagem Geral de User
+08/03/2024 12:40:39  INFO 1672 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 1672 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 12:40:39 DEBUG 1672 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 12:40:39  INFO 1672 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 12:40:39  INFO 1672 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\andre\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/andre/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+08/03/2024 12:40:39  INFO 1672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08/03/2024 12:40:39  INFO 1672 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08/03/2024 12:40:40  INFO 1672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 12:40:40  INFO 1672 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 2 JPA repository interfaces.
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1535 ms
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 12:40:41 DEBUG 1672 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 12:40:41 DEBUG 1672 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+08/03/2024 12:40:41  INFO 1672 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08/03/2024 12:40:42  INFO 1672 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 12:40:42  INFO 1672 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 12:40:42  INFO 1672 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ea1e86b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57adf482, org.springframework.security.web.context.SecurityContextPersistenceFilter@705c0e3, org.springframework.security.web.header.HeaderWriterFilter@74adfb95, org.springframework.security.web.authentication.logout.LogoutFilter@3f8c895d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5b0df461, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44c3fd10, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19c47aec, org.springframework.security.web.session.SessionManagementFilter@da0b344, org.springframework.security.web.access.ExceptionTranslationFilter@3a537bf3]
+08/03/2024 12:40:43 DEBUG 1672 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 12:40:43 DEBUG 1672 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 12:40:43  WARN 1672 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 12:40:43  WARN 1672 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+br.com.sp.pratica.controller.UserController#listAllDisabled(Pageable)
+to {GET [/api/users]}: There is already 'userController' bean method
+br.com.sp.pratica.controller.UserController#listAllEnabled(Pageable) mapped.
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+08/03/2024 12:40:43  WARN 1672 --- [restartedMain] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+08/03/2024 12:40:43  INFO 1672 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+08/03/2024 12:40:43 ERROR 1672 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+br.com.sp.pratica.controller.UserController#listAllDisabled(Pageable)
+to {GET [/api/users]}: There is already 'userController' bean method
+br.com.sp.pratica.controller.UserController#listAllEnabled(Pageable) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:921) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.30.jar:5.3.30]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:409) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300) ~[spring-boot-2.7.17.jar:2.7.17]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1289) ~[spring-boot-2.7.17.jar:2.7.17]
+	at br.com.sp.pratica.ToDoListApplication.main(ToDoListApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-2.7.17.jar:2.7.17]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'userController' method 
+br.com.sp.pratica.controller.UserController#listAllDisabled(Pageable)
+to {GET [/api/users]}: There is already 'userController' bean method
+br.com.sp.pratica.controller.UserController#listAllEnabled(Pageable) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:669) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:635) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:332) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:420) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:299) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:297) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:266) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:225) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:213) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:205) ~[spring-webmvc-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.30.jar:5.3.30]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.30.jar:5.3.30]
+	... 21 common frames omitted
+
+08/03/2024 12:43:13  INFO 7592 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 7592 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 12:43:13 DEBUG 7592 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 12:43:13  INFO 7592 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 12:43:13  INFO 7592 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\andre\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/andre/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+08/03/2024 12:43:13  INFO 7592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08/03/2024 12:43:13  INFO 7592 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08/03/2024 12:43:14  INFO 7592 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 12:43:14  INFO 7592 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+08/03/2024 12:43:14  INFO 7592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1289 ms
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 12:43:15 DEBUG 7592 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 12:43:15 DEBUG 7592 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08/03/2024 12:43:15  INFO 7592 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 12:43:16  INFO 7592 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 12:43:16  INFO 7592 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 12:43:16  INFO 7592 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d19133, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@34a0a65d, org.springframework.security.web.context.SecurityContextPersistenceFilter@13fa12e4, org.springframework.security.web.header.HeaderWriterFilter@646c98eb, org.springframework.security.web.authentication.logout.LogoutFilter@498f759a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@415a4f7c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c8f040, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1a637be6, org.springframework.security.web.session.SessionManagementFilter@5c3e2916, org.springframework.security.web.access.ExceptionTranslationFilter@5475016f]
+08/03/2024 12:43:16 DEBUG 7592 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 12:43:16 DEBUG 7592 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 12:43:16  WARN 7592 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 12:43:17  INFO 7592 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 12:43:17  INFO 7592 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 12:43:17  INFO 7592 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 3.846 seconds (JVM running for 4.277)
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:24  INFO 7592 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:43:25 DEBUG 7592 --- [http-nio-8081-exec-1] b.c.s.pratica.controller.UserController  : Listagem De Usuários Ativos
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44  INFO 7592 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:43:44 DEBUG 7592 --- [http-nio-8081-exec-3] b.c.s.pratica.controller.UserController  : Listagem De Usuários Inativos
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20  INFO 7592 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listDisabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 12:50:20 DEBUG 7592 --- [http-nio-8081-exec-6] b.c.s.pratica.controller.UserController  : Listagem De Usuários Ativos
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24  INFO 7592 --- [http-nio-8081-exec-7] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/delete/3
+08/03/2024 12:50:24 DEBUG 7592 --- [http-nio-8081-exec-7] b.c.s.pratica.controller.UserController  : Inicialização do delete User
+08/03/2024 12:50:24 DEBUG 7592 --- [http-nio-8081-exec-7] b.c.s.pratica.controller.UserController  : Finalização do delete User
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28  INFO 7592 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/delete/3 --- Nova Requisição: http://localhost:8081/api/users/listDisabled
+08/03/2024 12:50:28 DEBUG 7592 --- [http-nio-8081-exec-8] b.c.s.pratica.controller.UserController  : Listagem De Usuários Inativos
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 12084 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 13:58:41 DEBUG 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\andre\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/andre/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 13:58:41  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1277 ms
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 13:58:42 DEBUG 12084 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 13:58:42 DEBUG 12084 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+08/03/2024 13:58:42  INFO 12084 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08/03/2024 13:58:43  INFO 12084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 13:58:43  INFO 12084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 13:58:43  INFO 12084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 13:58:44  INFO 12084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4eafd62, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cfd27a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e757e1c, org.springframework.security.web.header.HeaderWriterFilter@55f06f9b, org.springframework.security.web.authentication.logout.LogoutFilter@25bb316f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3a537bf3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7004023a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@147b900e, org.springframework.security.web.session.SessionManagementFilter@11c58638, org.springframework.security.web.access.ExceptionTranslationFilter@3a1c5926]
+08/03/2024 13:58:44 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 13:58:44 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 13:58:44  WARN 12084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 13:58:44  INFO 12084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 13:58:44  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 13:58:44  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 3.826 seconds (JVM running for 4.254)
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59  INFO 12084 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 13:59:59 DEBUG 12084 --- [http-nio-8081-exec-1] b.c.s.pratica.controller.UserController  : Listagem De Usuários Ativos
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02  INFO 12084 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:00:02 DEBUG 12084 --- [http-nio-8081-exec-3] b.c.s.p.controller.ToDoListController    : Listagem Geral de ToDoList
+08/03/2024 14:34:41  INFO 12084 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (1 addition, 0 deletions, 1 modification)
+08/03/2024 14:34:41  INFO 12084 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+08/03/2024 14:34:41  INFO 12084 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+08/03/2024 14:34:41  INFO 12084 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:34:41  INFO 12084 --- [Thread-5] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+08/03/2024 14:34:41  WARN 12084 --- [Thread-5] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+08/03/2024 14:34:41  INFO 12084 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+08/03/2024 14:34:41  INFO 12084 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 12084 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 14:34:42 DEBUG 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 479 ms
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 14:34:42 DEBUG 12084 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 14:34:42 DEBUG 12084 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5bf8ad9a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19cfe315, org.springframework.security.web.context.SecurityContextPersistenceFilter@2c4d71e9, org.springframework.security.web.header.HeaderWriterFilter@78da98db, org.springframework.security.web.authentication.logout.LogoutFilter@37c2072b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@774362b3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5bf330c0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@56d0ca35, org.springframework.security.web.session.SessionManagementFilter@776b8e8b, org.springframework.security.web.access.ExceptionTranslationFilter@354dd300]
+08/03/2024 14:34:42 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 14:34:42 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 14:34:42  WARN 12084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 0.799 seconds (JVM running for 2162.536)
+08/03/2024 14:34:42  INFO 12084 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+08/03/2024 14:35:14  INFO 12084 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+08/03/2024 14:35:14  INFO 12084 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+08/03/2024 14:35:14  INFO 12084 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:35:14  INFO 12084 --- [Thread-7] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+08/03/2024 14:35:14  WARN 12084 --- [Thread-7] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+08/03/2024 14:35:14  INFO 12084 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+08/03/2024 14:35:14  INFO 12084 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 12084 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 14:35:14 DEBUG 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 2 JPA repository interfaces.
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 313 ms
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 14:35:14 DEBUG 12084 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 14:35:14 DEBUG 12084 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ed27626, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@311d430d, org.springframework.security.web.context.SecurityContextPersistenceFilter@38120bcd, org.springframework.security.web.header.HeaderWriterFilter@767220e3, org.springframework.security.web.authentication.logout.LogoutFilter@44ebd77b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7f82ba2a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1810f801, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@222b35af, org.springframework.security.web.session.SessionManagementFilter@4346f5a2, org.springframework.security.web.access.ExceptionTranslationFilter@3ddf5114]
+08/03/2024 14:35:14 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 14:35:14 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 14:35:14  WARN 12084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 0.616 seconds (JVM running for 2194.691)
+08/03/2024 14:35:14  INFO 12084 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+08/03/2024 14:38:56  INFO 12084 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 5 class path changes (0 additions, 0 deletions, 5 modifications)
+08/03/2024 14:38:56  INFO 12084 --- [Thread-12] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+08/03/2024 14:38:56  INFO 12084 --- [Thread-12] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:38:56  INFO 12084 --- [Thread-12] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+08/03/2024 14:38:56  WARN 12084 --- [Thread-12] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+08/03/2024 14:38:56  INFO 12084 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+08/03/2024 14:38:56  INFO 12084 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 12084 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 14:38:57 DEBUG 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 282 ms
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 14:38:57 DEBUG 12084 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 14:38:57 DEBUG 12084 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@22451583, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@412c30d4, org.springframework.security.web.context.SecurityContextPersistenceFilter@7c8ba288, org.springframework.security.web.header.HeaderWriterFilter@6d82c3fe, org.springframework.security.web.authentication.logout.LogoutFilter@f5663df, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@243121ef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5f579ba4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ff15052, org.springframework.security.web.session.SessionManagementFilter@7ba15df3, org.springframework.security.web.access.ExceptionTranslationFilter@69163e88]
+08/03/2024 14:38:57 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 14:38:57 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 14:38:57  WARN 12084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 0.553 seconds (JVM running for 2417.3)
+08/03/2024 14:38:57  INFO 12084 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+08/03/2024 14:39:12  INFO 12084 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+08/03/2024 14:39:12  INFO 12084 --- [Thread-16] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+08/03/2024 14:39:12  INFO 12084 --- [Thread-16] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:39:12  INFO 12084 --- [Thread-16] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+08/03/2024 14:39:12  WARN 12084 --- [Thread-16] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-214]
+08/03/2024 14:39:12  INFO 12084 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+08/03/2024 14:39:12  INFO 12084 --- [Thread-16] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 12084 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 14:39:12 DEBUG 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 250 ms
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 14:39:12 DEBUG 12084 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 14:39:12 DEBUG 12084 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 14:39:12  INFO 12084 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42ef9da2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@415ef023, org.springframework.security.web.context.SecurityContextPersistenceFilter@1a37940b, org.springframework.security.web.header.HeaderWriterFilter@775235d2, org.springframework.security.web.authentication.logout.LogoutFilter@750ab1b5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31d0c046, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57ca8f0b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4de91b45, org.springframework.security.web.session.SessionManagementFilter@15b238e7, org.springframework.security.web.access.ExceptionTranslationFilter@f949b10]
+08/03/2024 14:39:13 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 14:39:13 DEBUG 12084 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 14:39:13  WARN 12084 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 0.482 seconds (JVM running for 2432.874)
+08/03/2024 14:39:13  INFO 12084 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Starting ToDoListApplication using Java 17.0.10 on DESKTOP-TUHPCJF with PID 5944 (C:\Users\andre\eclipse-workspace\To-do-list\target\classes started by andre in C:\Users\andre\eclipse-workspace\To-do-list)
+08/03/2024 14:42:18 DEBUG 5944 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Running with Spring Boot v2.7.17, Spring v5.3.30
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : The following 1 profile is active: "dev"
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\andre\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/andre/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08/03/2024 14:42:18  INFO 5944 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.82]
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1293 ms
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testedb'
+08/03/2024 14:42:19 DEBUG 5944 --- [restartedMain] b.c.s.p.f.SecurityAuthenticatorFilter    : Filter 'securityAuthenticatorFilter' configured for use
+08/03/2024 14:42:19 DEBUG 5944 --- [restartedMain] b.c.s.p.filter.RequestLoggingFilter      : Filter 'requestLoggingFilter' configured for use
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+08/03/2024 14:42:19  INFO 5944 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+08/03/2024 14:42:20  INFO 5944 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+08/03/2024 14:42:20  INFO 5944 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+08/03/2024 14:42:20  INFO 5944 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08/03/2024 14:42:20  INFO 5944 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+08/03/2024 14:42:21  INFO 5944 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@32f57110, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e619be4, org.springframework.security.web.context.SecurityContextPersistenceFilter@25fc4132, org.springframework.security.web.header.HeaderWriterFilter@3b3e699b, org.springframework.security.web.authentication.logout.LogoutFilter@b99824c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f328b0b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5b01f87e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6277aca5, org.springframework.security.web.session.SessionManagementFilter@51a9671f, org.springframework.security.web.access.ExceptionTranslationFilter@3c654d00]
+08/03/2024 14:42:21 DEBUG 5944 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Iniciando Insert no banco de dados H2
+08/03/2024 14:42:21 DEBUG 5944 --- [restartedMain] b.c.s.p.config.profiles.DevProfile       : Finalizando Insert no banco de dados H2
+08/03/2024 14:42:21  WARN 5944 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08/03/2024 14:42:21  INFO 5944 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+08/03/2024 14:42:21  INFO 5944 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+08/03/2024 14:42:21  INFO 5944 --- [restartedMain] br.com.sp.pratica.ToDoListApplication    : Started ToDoListApplication in 3.88 seconds (JVM running for 4.343)
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57  INFO 5944 --- [http-nio-8081-exec-1] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:43:57 DEBUG 5944 --- [http-nio-8081-exec-1] b.c.s.p.controller.ToDoListController    : Listagem Geral de ToDoList
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03  INFO 5944 --- [http-nio-8081-exec-3] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/users/listEnabled
+08/03/2024 14:44:03 DEBUG 5944 --- [http-nio-8081-exec-3] b.c.s.pratica.controller.UserController  : Listagem De Usuários Ativos
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12  INFO 5944 --- [http-nio-8081-exec-4] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/users/listEnabled --- Nova Requisição: http://localhost:8081/api/to-do-list/update/1/status
+08/03/2024 14:44:12 DEBUG 5944 --- [http-nio-8081-exec-4] b.c.s.p.controller.ToDoListController    : Inicialização do updateStatus ToDoList
+08/03/2024 14:44:12 DEBUG 5944 --- [http-nio-8081-exec-4] b.c.s.p.controller.ToDoListController    : Finalização do updateStatus ToDoList
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17  INFO 5944 --- [http-nio-8081-exec-5] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/1/status --- Nova Requisição: http://localhost:8081/api/to-do-list
+08/03/2024 14:44:17 DEBUG 5944 --- [http-nio-8081-exec-5] b.c.s.p.controller.ToDoListController    : Listagem Geral de ToDoList
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  INFO 5944 --- [http-nio-8081-exec-6] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:30  WARN 5944 --- [http-nio-8081-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `br.com.sp.pratica.enums.TaskStatus` from String "ENCERRADO": not one of the values accepted for Enum class: [EM_ANDAMENTO, CANCELADO, CONCLUIDO]; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `br.com.sp.pratica.enums.TaskStatus` from String "ENCERRADO": not one of the values accepted for Enum class: [EM_ANDAMENTO, CANCELADO, CONCLUIDO]<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 2, column: 15] (through reference chain: br.com.sp.pratica.dtos.putDtos.StatusToDoListDTO["status"])]
+08/03/2024 14:44:50  INFO 5944 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/2/status --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:50  INFO 5944 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/2/status --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:50  INFO 5944 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/2/status --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:50  INFO 5944 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/2/status --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status
+08/03/2024 14:44:50  INFO 5944 --- [http-nio-8081-exec-8] b.c.s.p.filter.RequestLoggingFilter      : Antiga Requisição: http://localhost:8081/api/to-do-list/update/2/status --- Nova Requisição: http://localhost:8081/api/to-do-list/update/2/status

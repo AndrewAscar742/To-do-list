@@ -1,11 +1,15 @@
 package br.com.sp.pratica.controller;
 
 import java.net.URI;
-import java.util.List;
+
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,10 +41,16 @@ public class UserController {
 		this.userService = userService;
 	}
 	
-	@GetMapping
-	public ResponseEntity<List<UserDTO>> listAll(){
-		logger.debug("Listagem Geral de User");
-		return ResponseEntity.ok(userService.listAll());
+	@GetMapping("/listEnabled")
+	public ResponseEntity<Page<UserDTO>> listAllEnabled(@PageableDefault(size = 20) Pageable pageable){
+		logger.debug("Listagem De Usuários Ativos");
+		return ResponseEntity.ok(userService.listAllEnabled(pageable));
+	}
+	
+	@GetMapping("/listDisabled")
+	public ResponseEntity<Page<UserDTO>> listAllDisabled(@PageableDefault(size = 20) Pageable pageable){
+		logger.debug("Listagem De Usuários Inativos");
+		return ResponseEntity.ok(userService.listAllDisabled(pageable));
 	}
 	
 	@GetMapping(ID)
@@ -50,7 +60,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/save")
-	public ResponseEntity<UserDTO> save(@RequestBody UserDTO userDTO, UriComponentsBuilder uriBuilder){
+	public ResponseEntity<UserDTO> save(@RequestBody @Valid UserDTO userDTO, UriComponentsBuilder uriBuilder){
 		logger.debug("Inicialização do save User");
 		UserDTO user = userService.save(userDTO);
 		
@@ -61,7 +71,7 @@ public class UserController {
 	}
 	
 	@PutMapping("/update" + ID)
-	public ResponseEntity<UserDTO> update(@PathVariable(ID_PARAM) Long id ,@RequestBody UserDTO userDTO) {
+	public ResponseEntity<UserDTO> update(@PathVariable(ID_PARAM) Long id ,@RequestBody @Valid UserDTO userDTO) {
 		logger.debug("Inicialização do update User");
 		
 		userDTO.setId(id);

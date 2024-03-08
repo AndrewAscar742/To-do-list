@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
 
 import br.com.sp.pratica.enums.Genre;
+import br.com.sp.pratica.enums.UserRole;
 
 @JsonInclude(Include.NON_NULL)
 public class UserDTO {
@@ -26,20 +27,18 @@ public class UserDTO {
 
 	@JsonProperty(access = Access.READ_WRITE)
 	@NotNull
-	@NotEmpty
 	private Integer age;
 
 	@JsonProperty(access = Access.READ_WRITE)
 	@NotNull
-	@NotEmpty
 	private Genre genre;
 
 	@JsonProperty(access = Access.READ_ONLY)
-	@JsonFormat(pattern = "dd/MM//yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date date_initial;
 	
 	@JsonProperty(access = Access.READ_ONLY)
-	@JsonFormat(pattern = "dd/MM//yyyy")
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	private Date data_edition;
 
 	@JsonProperty(access = Access.READ_WRITE)
@@ -49,13 +48,17 @@ public class UserDTO {
 	@JsonProperty(access = Access.READ_WRITE)
 	@NotBlank
 	private String password;
+	
+	@JsonProperty(access = Access.READ_WRITE)
+	@NotNull
+	private UserRole userRole;
 
 	public UserDTO() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public UserDTO(Long id, String name, Integer age, Genre genre, Date date_initial, Date data_edition, String email,
-			String password) {
+			String password, UserRole userRole) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -65,6 +68,7 @@ public class UserDTO {
 		this.data_edition = data_edition;
 		this.email = email;
 		this.password = password;
+		this.userRole = userRole;
 	}
 
 	public Long getId() {
@@ -131,4 +135,12 @@ public class UserDTO {
 		this.password = password;
 	}
 
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+	
 }

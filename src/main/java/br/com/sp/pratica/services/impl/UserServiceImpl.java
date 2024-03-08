@@ -1,10 +1,11 @@
 package br.com.sp.pratica.services.impl;
 
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.sp.pratica.domain.User;
@@ -30,14 +31,18 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public List<UserDTO> listAll() {
-		List<UserDTO> list = userRepository.findAll()
-				.stream()
-				.map(user -> modelMapperService.convertUserToUserDTO(user))
-				.toList();
+	public Page<UserDTO> listAllEnabled(Pageable pageable) {
+		Page<UserDTO> page = userRepository.listAllEnabled(pageable).map(user -> modelMapperService.convertUserToUserDTO(user));
 		
-		return list;
-		
+		return page;
+	}
+	
+	@Override
+	public Page<UserDTO> listAllDisabled(Pageable pageable) {
+		Page<UserDTO> page = userRepository.listAllDisabled(pageable)
+				.map(user -> modelMapperService.convertUserToUserDTO(user));
+
+		return page;
 	}
 	
 	@Override
@@ -62,6 +67,7 @@ public class UserServiceImpl implements UserService {
 		userDTO.setDate_initial(new Date());
 		
 		User user = modelMapperService.converUserDTO_to_User(userDTO);
+		user.setEnabled(true);
 		user = userRepository.save(user);
 		
 		return modelMapperService.convertUserToUserDTO(user);
@@ -69,20 +75,35 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserDTO update(UserDTO userDTO) {
-		userDTO.setData_edition(new Date());
+		User user = this.findUser(userDTO.getId());
 		
-		User user = modelMapperService.converUserDTO_to_User(userDTO);
-		user = userRepository.save(user);
+		user = this.merge(userDTO, user);
+		userRepository.saveAndFlush(user);
 		
 		return modelMapperService.convertUserToUserDTO(user);
 	}
 	
+	private User merge(UserDTO userDTO, User user) {
+		user.setName(userDTO.getName());
+		user.setAge(userDTO.getAge());
+		user.setGenre(userDTO.getGenre());
+		user.setEmail(userDTO.getEmail());
+		user.setPassword(userDTO.getPassword());
+		user.setRole(userDTO.getUserRole());
+		user.setData_edition(new Date());
+		
+		return user;
+		
+	}
+
 	@Override
 	public boolean delete(Long id) {
-		Optional<User> user = userRepository.findById(id);
+		Optional<User> optionalUser = userRepository.findById(id);
 		
-		if (user.isPresent()) {
-			userRepository.deleteById(id);
+		if (optionalUser.isPresent()) {
+			User user = optionalUser.get();
+			user.setEnabled(false);
+			userRepository.saveAndFlush(user);
 			return true;
 		} else {
 			return false;

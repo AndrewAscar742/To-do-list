@@ -1,13 +1,14 @@
 package br.com.sp.pratica.services;
 
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import br.com.sp.pratica.domain.User;
 import br.com.sp.pratica.dtos.UserDTO;
 
 public interface UserService {
 
-	List<UserDTO> listAll();
+	Page<UserDTO> listAllEnabled(Pageable pageable);
 
 	UserDTO findById(Long id);
 
@@ -18,5 +19,7 @@ public interface UserService {
 	UserDTO update(UserDTO userDTO);
 
 	User findUser(Long user_id);
+
+	Page<UserDTO> listAllDisabled(Pageable pageable);
 
 }
