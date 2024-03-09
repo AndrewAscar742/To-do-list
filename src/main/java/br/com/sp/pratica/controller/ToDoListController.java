@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -23,9 +24,12 @@ import br.com.sp.pratica.dtos.postDtos.PostToDoList;
 import br.com.sp.pratica.dtos.putDtos.PutToDoList;
 import br.com.sp.pratica.dtos.putDtos.StatusToDoListDTO;
 import br.com.sp.pratica.services.ToDoListService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/api/to-do-list")
+@RequestMapping(value = "/api/to-do-list", produces = "application/json")
+@Tag(name = "ToDoListController")
 public class ToDoListController {
 	
 	private final String ID = "/{ToDoList_id}";
@@ -41,6 +45,7 @@ public class ToDoListController {
 	}
 	
 	@GetMapping
+	@Operation(method = "GET", deprecated = false, summary = "Listagem Geral de ToDolist")
 	public ResponseEntity<List<ToDoListDTO>> listAll() {
 		logger.debug("Listagem Geral de ToDoList");
 		return ResponseEntity.ok(toDoListService.listAll());		
@@ -48,12 +53,14 @@ public class ToDoListController {
 	}
 	
 	@GetMapping(ID)
+	@Operation(method = "GET", deprecated = false, summary = "Buscar ToDoList por ID")
 	public ResponseEntity<ToDoListDTO> findById(@PathVariable(ID_PARAM) Long id) {
 		logger.debug("Listagem Específica por ID de ToDoList");
 		return ResponseEntity.ok(toDoListService.findById(id));
 	}
 	
 	@PostMapping("/save")
+	@Operation(method = "POST", deprecated = false, summary = "Cadastramento de um ToDoList")
 	public ResponseEntity<ToDoListDTO> save(@RequestBody @Valid PostToDoList toDoList, UriComponentsBuilder uriBuilder) {
 		logger.debug("Inicialização do save ToDoList");
 		ToDoListDTO toDoListDto = toDoListService.save(toDoList);
@@ -65,6 +72,7 @@ public class ToDoListController {
 	}
 	
 	@PutMapping("/update" + ID)
+	@Operation(method = "PUT", deprecated = false, summary = "Atualização de um ToDoList")
 	public ResponseEntity<ToDoListDTO> update(@PathVariable(ID_PARAM) Long id, @RequestBody @Valid PutToDoList putToDoList) {
 		logger.debug("Inicialização do update ToDoList");
 		ToDoListDTO toDoListDto = toDoListService.update(id, putToDoList);
@@ -73,7 +81,8 @@ public class ToDoListController {
 		return ResponseEntity.ok(toDoListDto);
 	}
 	
-	@PutMapping("/update" + ID + "/status")
+	@PatchMapping("/update" + ID + "/status")
+	@Operation(method = "PATCH", deprecated = false, summary = "Atualização de Status sobre o ToDoList")
 	public ResponseEntity<ToDoListDTO> updateStatus(@PathVariable(ID_PARAM) Long id, @RequestBody @Valid StatusToDoListDTO status){
 		logger.debug("Inicialização do updateStatus ToDoList");
 		ToDoListDTO toDoListDto = toDoListService.updateStatus(id, status);
@@ -83,6 +92,7 @@ public class ToDoListController {
 	}
 	
 	@DeleteMapping("/delete" + ID)
+	@Operation(method = "DELETE", deprecated = false, summary = "Deletar Permanentemente um ToDoList")
 	public ResponseEntity<Object> delete(@PathVariable(ID_PARAM) Long id) {
 		logger.debug("Inicialização do delete ToDoList");
 		boolean deleted = toDoListService.delete(id);
