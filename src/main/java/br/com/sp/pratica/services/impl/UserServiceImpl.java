@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import br.com.sp.pratica.domain.User;
@@ -13,6 +14,7 @@ import br.com.sp.pratica.dtos.UserDTO;
 import br.com.sp.pratica.dtos.services.ModelMapperService;
 import br.com.sp.pratica.repositories.UserRepository;
 import br.com.sp.pratica.services.UserService;
+import br.com.sp.pratica.services.exceptions.EmailRepeatedException;
 import br.com.sp.pratica.services.exceptions.UserNotFoundException;
 
 @Service
@@ -64,18 +66,32 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public UserDTO save(UserDTO userDTO) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		userDTO.setDate_initial(new Date());
+		
+		validarEmail(userDTO.getEmail());
 		
 		User user = modelMapperService.converUserDTO_to_User(userDTO);
 		user.setEnabled(true);
+		user.setPassword(encoder.encode(user.getPassword()));
 		user = userRepository.save(user);
 		
 		return modelMapperService.convertUserToUserDTO(user);
 	}
 	
+	private void validarEmail(String email) {
+		Optional<User> user =  userRepository.validarEmail(email);
+		
+		if (!user.isEmpty()) {
+			throw new EmailRepeatedException("Email repetido, tente novamente");
+		}
+		
+	}
+
 	@Override
 	public UserDTO update(UserDTO userDTO) {
 		User user = this.findUser(userDTO.getId());
+		validarEmail(userDTO.getEmail());
 		
 		user = this.merge(userDTO, user);
 		userRepository.saveAndFlush(user);

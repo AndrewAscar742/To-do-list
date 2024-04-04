@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import br.com.sp.pratica.domain.ToDoList;
 import br.com.sp.pratica.domain.User;
@@ -36,10 +37,12 @@ public class DevProfile {
 	@Bean
 	public void insertDB() {
 		logger.debug("Iniciando Insert no banco de dados H2");
-		User user1 = new User("Andrew Matos", 20, Genre.MASCULINO, new Date(), new Date(), "andrewteste@fake.com", "123", true, UserRole.ADMIN);
-		User user2 = new User("José Felipe", 35, Genre.MASCULINO, new Date(), new Date(), "josefelipe@fake.com", "123", true, UserRole.ADMIN);
-		User user3 = new User("Beatriz", 19, Genre.FEMININO, new Date(), new Date(), "beatriz@fake.com", "123", true, UserRole.USER);
-		User user4 = new User("Teste falso", 24, Genre.MASCULINO, new Date(), new Date(), "testefalso@fake.com", "123", false, UserRole.USER);
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+		User user1 = new User("Andrew Matos", 20, Genre.MASCULINO, new Date(), new Date(), "andrewteste@fake.com", encoder.encode("123"), true, UserRole.ADMIN);
+		User user2 = new User("José Felipe", 35, Genre.MASCULINO, new Date(), new Date(), "josefelipe@fake.com", encoder.encode("1234"), true, UserRole.ADMIN);
+		User user3 = new User("Beatriz", 19, Genre.FEMININO, new Date(), new Date(), "beatriz@fake.com", encoder.encode("12345"), true, UserRole.USER);
+		User user4 = new User("Teste falso", 24, Genre.MASCULINO, new Date(), new Date(), "testefalso@fake.com", encoder.encode("123456"), false, UserRole.USER);
 		
 		userRepository.saveAll(Arrays.asList(user1, user2, user3, user4));
 		

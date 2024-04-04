@@ -20,6 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import br.com.sp.pratica.controller.handlerExceptions.body.Campo;
 import br.com.sp.pratica.controller.handlerExceptions.body.RespostaException;
+import br.com.sp.pratica.services.exceptions.EmailRepeatedException;
 import br.com.sp.pratica.services.exceptions.ToDoListNotFoundException;
 import br.com.sp.pratica.services.exceptions.UserNotFoundException;
 
@@ -57,6 +58,15 @@ public class HandleExceptionsController extends ResponseEntityExceptionHandler{
 	
 	@ExceptionHandler(ToDoListNotFoundException.class)
 	public ResponseEntity<RespostaException> ToDoListNotFoundException(ToDoListNotFoundException ex, HttpServletRequest requestPath) {
+		HttpStatus status = HttpStatus.NOT_FOUND;
+		
+		RespostaException exception = new RespostaException(ex.getMessage(), status.value(), requestPath);
+		
+		return ResponseEntity.status(status).body(exception);
+	}
+	
+	@ExceptionHandler(EmailRepeatedException.class)
+	public ResponseEntity<RespostaException> EmailRepeatedException(EmailRepeatedException ex, HttpServletRequest requestPath) {
 		HttpStatus status = HttpStatus.NOT_FOUND;
 		
 		RespostaException exception = new RespostaException(ex.getMessage(), status.value(), requestPath);
